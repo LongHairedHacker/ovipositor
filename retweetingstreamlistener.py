@@ -1,4 +1,4 @@
-#!/usr/bin/env python2
+#!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 
 import tweepy
@@ -8,21 +8,21 @@ class RetweetingStreamListener(tweepy.StreamListener):
 
 
 	def on_status(self, status):
-		print "[Info] %s - %s" % (status.user.screen_name, status.text)
+		print("[Info] %s - %s" % (status.user.screen_name, status.text))
 
 		if not hasattr(status, 'retweeted_status'):
 			status.retweet()
-			print "[Info] Retweeted!"
+			print("[Info] Retweeted!")
 
 
-		print "-----------------------------------------"
+		print("-----------------------------------------")
 
 
 	def on_error(self, status_code):
 		# Rate limiting
 		if status_code == 420:
-			print "[Error] Got Error 420, rate limiting in effect"
+			print("[Error] Got Error 420, rate limiting in effect")
 			#returning False in on_data disconnects the stream
 			return False
 
-		print "[Error] Got status code %d" % status_code
+		print("[Error] Got status code %d" % status_code)

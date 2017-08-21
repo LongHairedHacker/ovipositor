@@ -1,4 +1,4 @@
-#!/usr/bin/env python2
+#!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 
 import tweepy
@@ -20,5 +20,5 @@ if __name__ == '__main__':
 	while True:
 		stream = tweepy.Stream(auth = api.auth, listener=RetweetingStreamListener(api))
 		stream.filter(track=['#zaunei2016', '@zaunei2016'])
-		print "[Error] Something went wrong reconnecting"
+		print("[Error] Something went wrong reconnecting")
 		sleep(10.0)
