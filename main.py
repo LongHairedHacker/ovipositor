@@ -19,6 +19,6 @@ if __name__ == '__main__':
 
 	while True:
 		stream = tweepy.Stream(auth = api.auth, listener=RetweetingStreamListener(api))
-		stream.filter(track=['#zaunei2016', '@zaunei2016'])
+		stream.filter(track=['#zaunei2017', '@zaunei2017'])
 		print("[Error] Something went wrong reconnecting")
 		sleep(10.0)
